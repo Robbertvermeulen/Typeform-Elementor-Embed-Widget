@@ -1,0 +1,241 @@
+/* Typeform Embed for Elementor Styles */
+
+.typeform-embed-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Widget Style */
+.typeform-embed-widget {
+    width: 100%;
+    height: 500px;
+    min-height: 300px;
+    border: none;
+    display: block;
+    position: relative;
+}
+
+/* Typeform iframe container fix */
+.typeform-embed-widget iframe,
+.typeform-embed-widget > div {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+}
+
+/* Placeholder for editor */
+.typeform-embed-placeholder {
+    padding: 40px;
+    background: #f5f5f5;
+    border: 2px dashed #ddd;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 4px;
+}
+
+/* Button Styles - Basic */
+.typeform-embed-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+}
+
+.typeform-embed-button:hover {
+    opacity: 0.85;
+}
+
+/* Full width button */
+.typeform-embed-button.typeform-button-full-width {
+    width: 100%;
+    display: flex;
+}
+
+/* Icon styling */
+.typeform-embed-button .button-icon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px !important;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    fill: currentColor;
+}
+
+.typeform-embed-button .button-icon i {
+    font-size: inherit !important;
+    width: 1em !important;
+    height: 1em !important;
+    line-height: 1 !important;
+    fill: inherit !important;
+}
+
+.typeform-embed-button .button-icon svg {
+    width: 1em !important;
+    height: 1em !important;
+    fill: currentColor !important;
+}
+
+.typeform-embed-button .button-icon-before {
+    margin-right: 8px;
+}
+
+.typeform-embed-button .button-icon-after {
+    margin-left: 8px;
+}
+
+.typeform-embed-button .button-text {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .typeform-embed-widget {
+        height: 400px;
+        min-height: 300px;
+    }
+    
+    /* Adjust close button position on mobile */
+    .tf-v1-slider .tf-v1-close {
+        top: 10px !important;
+        right: 10px !important;
+        width: 35px !important;
+        height: 35px !important;
+    }
+}
+
+/* Loading state */
+.typeform-embed-widget.tf-loading {
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typeform-embed-widget.tf-loading::before {
+    content: "Loading form...";
+    color: #999;
+    font-size: 14px;
+}
+
+/* Elementor Editor specific styles */
+.elementor-editor-active .typeform-embed-container {
+    min-height: 200px;
+}
+
+.elementor-editor-active .typeform-embed-widget:empty::before {
+    content: "Typeform will be displayed here";
+    display: block;
+    padding: 40px;
+    text-align: center;
+    color: #999;
+    background: #f5f5f5;
+    border: 1px dashed #ddd;
+}
+
+/* Typeform Popup close button enhancement - keep popup separate */
+.tf-v1-popup .tf-v1-close {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: background 0.3s ease !important;
+}
+
+.tf-v1-popup .tf-v1-close:hover {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Typeform slider close button - simple positioning */
+.tf-v1-slider .tf-v1-close,
+.tf-v1-slider button.tf-v1-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 999999 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Make the X icon more visible */
+.tf-v1-slider .tf-v1-close::before,
+.tf-v1-slider .tf-v1-close::after {
+    content: '' !important;
+    position: absolute !important;
+    background-color: #ffffff !important;
+    width: 18px !important;
+    height: 2px !important;
+    top: 50% !important;
+    left: 50% !important;
+}
+
+.tf-v1-slider .tf-v1-close::before {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+.tf-v1-slider .tf-v1-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+}
+
+/* Extra styling for better visibility - only for the close button */
+.tf-v1-slider button.tf-v1-close {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.tf-v1-slider button.tf-v1-close:hover {
+    background: #000000 !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Make overlay clickable to close */
+.tf-v1-slider,
+.tf-v1-popup {
+    cursor: pointer;
+}
+
+.tf-v1-slider .tf-v1-iframe-wrapper,
+.tf-v1-popup .tf-v1-iframe-wrapper {
+    cursor: auto;
+}
+
+/* Visual hint for overlay click to close */
+.tf-v1-slider::before,
+.tf-v1-popup::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
